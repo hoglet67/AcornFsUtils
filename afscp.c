@@ -64,7 +64,7 @@ static void parse_inf(acorn_fs_object *obj, const char *filename)
     obj->load_addr = 0;
     obj->exec_addr = 0;
     obj->length = 0;
-    obj->attr = 0;
+    obj->attr = AFS_ATTR_UREAD | AFS_ATTR_UWRITE; // DMB: default to RW
 
     size_t len = strlen(filename);
     char *inf = alloca(len+5);
